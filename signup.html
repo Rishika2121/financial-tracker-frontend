@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Signup | Shunyatax</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Reuse existing theme -->
+  <link rel="stylesheet" href="access.css" />
+
+  <!-- Signup-only styling -->
+  <style>
+    .signup-wrapper {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .signup-box {
+  max-width: 620px;      /* 🔑 smaller width */
+  width: 100%;
+  padding: 20px;        /* 🔑 reduced padding */
+}
+
+
+    /* FORM CARD */
+    form.cap-card {
+      padding: 32px;
+    }
+
+    /* LEFT-ALIGNED FORM GROUP */
+    .form-group {
+      text-align: left;          /* ✅ KEY FIX */
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #d4af37;
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: #0b0b0b;
+      border: 1px solid #2a2a2a;
+      color: #f5f5f5;
+      padding: 12px 14px;
+      border-radius: 8px;
+      width: 100%;
+      font-size: 14px;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #7a7a7a;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #d4af37;
+      box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.4);
+    }
+
+    .business-only {
+      display: none;
+    }
+
+    .info-box {
+      background: #11172b;
+      border-left: 4px solid #d4af37;
+      padding: 20px;
+      margin-top: 25px;
+      border-radius: 8px;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    /* SUBMIT BUTTON (PRIMARY) */
+    .signup-btn {
+      margin-top: 30px;
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #d4af37, #f1d16a);
+      color: #000;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
+    }
+
+    .signup-btn:hover {
+      box-shadow: 0 16px 40px rgba(212, 175, 55, 0.55);
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="signup-wrapper">
+  <div class="signup-box">
+
+    <h1 style="text-align:center;">
+      <span style="color:#d4af37;">Shunyatax</span> Registration
+    </h1>
+
+    <p class="subtitle" style="text-align:center;">
+      Complete verification is mandatory before accessing the tax dashboard
+    </p>
+
+    <form class="cap-card" onsubmit="submitSignup(event)" enctype="multipart/form-data">
+
+      <!-- BASIC DETAILS -->
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" required placeholder="Enter full name">
+      </div>
+
+      <div class="form-group">
+        <label>Mobile Number</label>
+        <input type="tel" required placeholder="Enter mobile number">
+      </div>
+
+      <div class="form-group">
+        <label>Email ID</label>
+        <input type="email" required placeholder="Enter email address">
+      </div>
+
+      <div class="form-group">
+        <label>Country</label>
+        <select required>
+          <option value="">Select country</option>
+          <option>India</option>
+          <option>USA</option>
+          <option>UK</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Complete Address</label>
+        <textarea rows="3" required placeholder="Enter complete address"></textarea>
+      </div>
+
+      <!-- USAGE TYPE -->
+      <div class="form-group">
+        <label>Usage Type</label>
+        <select id="usageType" required onchange="toggleBusinessFields()">
+          <option value="">Select usage type</option>
+          <option value="personal">Personal</option>
+          <option value="business">Business / Industry</option>
+        </select>
+      </div>
+
+      <!-- BUSINESS FIELDS -->
+      <div class="business-only" id="businessFields">
+        <div class="form-group">
+          <label>GST Number (Mandatory)</label>
+          <input type="text" placeholder="Enter GST number">
+        </div>
+
+        <div class="form-group">
+          <label>Business Name</label>
+          <input type="text" placeholder="Enter business name">
+        </div>
+
+        <div class="form-group">
+          <label>Business Type / Industry Category</label>
+          <input type="text" placeholder="e.g. Retail, IT Services, Manufacturing">
+        </div>
+      </div>
+
+      <!-- DOCUMENTS -->
+      <h4 style="color:#d4af37; margin-top:25px; text-align:left;">
+        Mandatory Document Submission
+      </h4>
+
+      <div class="form-group">
+        <label>PAN / Tax ID</label>
+        <input type="file" required>
+      </div>
+
+      <div class="form-group">
+        <label>Aadhaar / National ID</label>
+        <input type="file" required>
+      </div>
+
+      <div class="form-group">
+        <label>Salary Slip / Business Income Proof</label>
+        <input type="file" required>
+      </div>
+
+      <div class="form-group">
+        <label>Bank Statements</label>
+        <input type="file" required>
+      </div>
+
+      <div class="form-group">
+        <label>Previous Year ITR (if available)</label>
+        <input type="file">
+      </div>
+
+      <button type="submit" class="signup-btn">
+        Access Tax Deduction Dashboard →
+      </button>
+
+    </form>
+
+    <p class="disclaimer" style="text-align:center; margin-top:20px;">
+      Shunyatax acts as a tax preparation assistant.  
+      Final tax filing responsibility remains with the user.
+    </p>
+
+  </div>
+</div>
+
+<script>
+function toggleBusinessFields() {
+  const type = document.getElementById("usageType").value;
+  document.getElementById("businessFields").style.display =
+    type === "business" ? "block" : "none";
+}
+
+function submitSignup(e) {
+  e.preventDefault();
+  alert("Signup completed successfully. Verification in progress.");
+}
+</script>
+
+</body>
+</html>

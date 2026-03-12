@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0b0f19;
+  color: #eaeaf0;
+  min-height: 100vh;
+}
+
+/* MAIN CONTAINER */
+.page {
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px 30px 40px;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.header .icon {
+  font-size: 36px;
+  margin-bottom: 6px;
+}
+
+.header h1 {
+  font-size: 34px;
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.header h1 span {
+  color: #d4af37;
+  display: inline-block;
+  padding-bottom: 3px;
+}
+
+.subtitle {
+  max-width: 680px;
+  margin: 0 auto 8px;
+  opacity: 0.85;
+  font-size: 15px;
+}
+
+/* LANDSCAPE LAYOUT */
+.capabilities-horizontal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 cards per row */
+  gap: 30px;
+  max-width: 1100px;   /* limit width */
+  margin: 40px auto;   /* center section */
+}
+
+
+
+/* CARD */
+.cap-card {
+  min-width: 260px;
+  background: linear-gradient(180deg, #141a2e, #0f1426);
+  border: 1px solid #1f2a44;
+  border-radius: 14px;
+  padding: 25px;
+  text-align: center;
+  cursor: pointer;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* SAFE HOVER (NO MOVEMENT) */
+.cap-card:hover {
+  border-color: #d4af37;
+  box-shadow: 0 14px 35px rgba(212, 175, 55, 0.25);
+}
+
+.cap-card span {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.cap-card h4 {
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.cap-card p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* TOP BAR */
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 6px;
+}
+
+.auth-buttons button {
+  margin-left: 10px;
+}
+
+/* BUTTONS */
+.gold-btn {
+  background: #d4af37;
+  color: #000;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.outline-btn {
+  background: transparent;
+  color: #d4af37;
+  border: 1px solid #d4af37;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.65;
+}
+
+/* =========================
+   BUTTON HOVER (LOGIN / SIGNUP)
+   ========================= */
+
+/* Common transition */
+.gold-btn,
+.outline-btn {
+  transition: box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Login button hover (outline) */
+.outline-btn:hover {
+  background: rgba(212, 175, 55, 0.08);
+  box-shadow: 0 10px 28px rgba(212, 175, 55, 0.35);
+}
+
+/* Sign Up button hover (filled) */
+.gold-btn:hover {
+  background: #e6c45a;
+  box-shadow: 0 10px 28px rgba(212, 175, 55, 0.45);
+}
+
+.cap-card {
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cap-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.25);
+}
+
+
+
+.tax-tip-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(135deg, #d4af37, #b8902c);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+  transition: all 0.3s ease;
+  z-index: 9999;
+  position: fixed;
+}
+
+.tax-tip-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Hover Preview Box */
+.tax-hover-preview {
+  position: absolute;
+  right: 80px;
+  bottom: 10px;
+  background: #141a2e;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  width: 260px;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  border: 1px solid #d4af37;
+}
+
+.tax-hover-preview.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* FLOAT CONTAINER */
+.tax-tip-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+}
+
+/* ICON */
+.tax-tip-icon {
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(135deg,#d4af37,#f5d76e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(212,175,55,0.5);
+  transition: all 0.3s ease;
+}
+
+.tax-tip-icon:hover {
+  transform: scale(1.1);
+}
+
+/* TOOLTIP */
+.tax-tip-tooltip {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  background: linear-gradient(180deg,#141a2e,#0f1426);
+  border: 1px solid #d4af37;
+  padding: 14px 18px;
+  border-radius: 10px;
+  width: 280px;
+  font-size: 14px;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+/* SHOW TOOLTIP */
+.tax-tip-float:hover .tax-tip-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}

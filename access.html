@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shunyatax Platform – Access</title>
+  <link rel="stylesheet" href="access.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div></div>
+    <div class="auth-buttons">
+      <button class="outline-btn" onclick="goTo('login.html')">Login</button>
+      <button class="gold-btn" onclick="goTo('signup.html')">Sign Up</button>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="icon">🛡️</div>
+    <h1><span>Shunyatax</span> Platform Access</h1>
+    <p class="subtitle">
+      Intelligent tax deduction & compliance system built for clarity,
+      accuracy, and legal safety.
+    </p>
+  </header>
+
+  <!-- LANDSCAPE OPTIONS -->
+<section class="capabilities-horizontal">
+
+  <div class="cap-card" onclick="goTo('deduction-eligibility.html')">
+    <i class="fas fa-calculator card-icon"></i>
+    <h3>Deduction Eligibility Engine</h3>
+    <p>Eligible, conditional & ineligible deduction checks.</p>
+  </div>
+
+  <div class="cap-card" onclick="goTo('regime-comparison.html')">
+    <i class="fas fa-balance-scale card-icon"></i>
+    <h3>Old vs New Regime Comparison</h3>
+    <p>Compare tax liability with explanation.</p>
+  </div>
+
+  <div class="cap-card" onclick="goTo('section-44ad.html')">
+    <i class="fas fa-building card-icon"></i>
+    <h3>44AD Business Provisions</h3>
+    <p>Presumptive taxation eligibility checks.</p>
+  </div>
+
+  <div class="cap-card" onclick="goTo('admin-review.html')">
+    <i class="fas fa-shield-halved card-icon"></i>
+    <h3>Admin Review & Validation</h3>
+    <p>Compliance verification before finalization.</p>
+  </div>
+
+  <div class="cap-card" onclick="goTo('itr-auto-fill.html')">
+    <i class="fas fa-file-invoice card-icon"></i>
+    <h3>ITR Auto-Fill & Integration</h3>
+    <p>Prepare ITRs using verified data.</p>
+  </div>
+
+  <div class="cap-card" onclick="goTo('security-compliance.html')">
+    <i class="fas fa-lock card-icon"></i>
+    <h3>Security & Compliance Layer</h3>
+    <p>Audit trails, encryption & access control.</p>
+  </div>
+
+</section>
+
+  <!-- DISCLAIMER -->
+  <footer class="footer">
+    <p>
+      
+    </p>
+  </footer>
+
+</div>
+
+<script>
+  function goTo(page) {
+    window.location.href = page;
+  }
+</script>
+
+
+
+</body>
+
+<script src="tax-tip.js"></script>
+
+</html>

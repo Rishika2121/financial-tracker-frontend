@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Security & Compliance Layer | Shunyatax</title>
+  <link rel="stylesheet" href="access.css">
+
+  <style>
+    body {
+      background: #0b0f19;
+      color: #eaeaf0;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    .engine-container {
+      max-width: 1400px;
+      margin: auto;
+      padding: 50px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .engine-header {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .engine-header .icon {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .engine-header h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .engine-header .subtitle {
+      max-width: 900px;
+      margin: auto;
+      opacity: 0.85;
+      line-height: 1.6;
+    }
+
+    .detail-card {
+      background: linear-gradient(180deg, #141a2e, #0f1426);
+      border: 1px solid #1f2a44;
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .detail-card h2 {
+      color: #d4af37;
+      margin-bottom: 12px;
+    }
+
+    .detail-card p,
+    .detail-card li {
+      font-size: 14px;
+      opacity: 0.92;
+      line-height: 1.6;
+    }
+
+    .detail-card ul {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    .detail-card ul li {
+      margin-bottom: 6px;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .result-box {
+      padding: 22px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .secure { border-left: 5px solid #3cb371; }
+    .trace { border-left: 5px solid #f0ad4e; }
+
+    .note {
+      grid-column: 1 / -1;
+      background: #11172b;
+      border-left: 4px solid #d4af37;
+    }
+
+    .back-wrap {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-top: 35px;
+    }
+
+    .action-btn {
+      background: #d4af37;
+      color: #000;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <div class="engine-container">
+
+    <!-- HEADER -->
+    <div class="engine-header">
+      <div class="icon"></div>
+      <h1>Security & Compliance Framework</h1>
+      <p class="subtitle">
+        A multi-layered protection and governance framework designed to
+        safeguard sensitive financial data, enforce regulatory compliance,
+        and ensure audit readiness at every stage.
+      </p>
+    </div>
+
+    <!-- ENCRYPTION -->
+    <section class="detail-card">
+      <h2>End-to-End Data Protection</h2>
+      <p>
+        Shunyatax secures all sensitive information using industry-standard
+        cryptographic controls throughout its lifecycle.
+      </p>
+      <ul>
+        <li>Encryption of data at rest</li>
+        <li>Encryption of data in transit</li>
+        <li>Secure storage for uploaded documents</li>
+        <li>Strict access-based data visibility</li>
+      </ul>
+    </section>
+
+    <!-- COMPLIANCE -->
+    <section class="detail-card">
+      <h2>Country & Jurisdiction Compliance</h2>
+      <p>
+        Tax logic and validations are enforced strictly according to
+        the user’s country and applicable jurisdiction.
+      </p>
+      <ul>
+        <li>Country-specific tax rule enforcement</li>
+        <li>Jurisdiction-aware validations</li>
+        <li>Local regulatory alignment</li>
+        <li>Automated compliance enforcement</li>
+      </ul>
+    </section>
+
+    <!-- AUDIT -->
+    <section class="detail-card" style="grid-column:1 / -1;">
+      <h2>Audit Trail & Traceability</h2>
+
+      <div class="result-grid">
+        <div class="result-box secure">
+          <h3>Comprehensive Activity Logging</h3>
+          <p>
+            All sensitive actions—uploads, edits, validations,
+            approvals, and overrides—are logged with timestamps.
+          </p>
+        </div>
+
+        <div class="result-box trace">
+          <h3>Full Traceability</h3>
+          <p>
+            Every change is traceable to its source,
+            enabling accountability and audit transparency.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RULE GOVERNANCE -->
+    <section class="detail-card" style="grid-column:1 / -1;">
+      <h2>Controlled Tax Rule Governance</h2>
+      <ul>
+        <li>Tax rules maintained only by authorized administrators</li>
+        <li>Automatic updates when tax laws change</li>
+        <li>Version-controlled rule modifications</li>
+        <li>No end-user manipulation of core tax logic</li>
+      </ul>
+      <p>
+        This governance model ensures legal accuracy
+        while minimizing regulatory exposure.
+      </p>
+    </section>
+
+    <!-- WHY IT MATTERS -->
+    <section class="detail-card note">
+      <h2>Why This Framework Is Critical</h2>
+      <p>
+        Financial platforms demand the highest level of security and compliance.
+        This framework protects users, reduces legal risk,
+        and establishes long-term trust with regulators and stakeholders.
+      </p>
+    </section>
+
+    <!-- BACK -->
+    <div class="back-wrap">
+      <button class="action-btn" onclick="window.location.href='access.html'">
+        ← Back to Platform
+      </button>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

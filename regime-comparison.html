@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Old vs New Tax Regime Comparison – Shunyatax</title>
+  <link rel="stylesheet" href="access.css">
+
+  <style>
+    body {
+      background: #0b0f19;
+      color: #eaeaf0;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    .engine-container {
+      max-width: 1400px;
+      margin: auto;
+      padding: 50px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .engine-header {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .engine-header .icon {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .engine-header h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .engine-header .subtitle {
+      max-width: 850px;
+      margin: auto;
+      opacity: 0.85;
+      line-height: 1.6;
+    }
+
+    .detail-card {
+      background: linear-gradient(180deg, #141a2e, #0f1426);
+      border: 1px solid #1f2a44;
+      border-radius: 14px;
+      padding: 26px;
+    }
+
+    .detail-card h2 {
+      color: #d4af37;
+      margin-bottom: 12px;
+    }
+
+    .detail-card h3 {
+      margin-top: 16px;
+      font-size: 15px;
+      color: #f1d16a;
+    }
+
+    .detail-card p,
+    .detail-card li {
+      font-size: 14px;
+      opacity: 0.92;
+      line-height: 1.6;
+    }
+
+    .detail-card ul {
+      padding-left: 18px;
+      margin-top: 8px;
+    }
+
+    .detail-card ul li {
+      margin-bottom: 6px;
+    }
+
+    .note {
+      grid-column: 1 / -1;
+      background: #11172b;
+      border-left: 4px solid #d4af37;
+    }
+
+    .back-wrap {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-top: 35px;
+    }
+
+    .action-btn {
+      background: #d4af37;
+      color: #000;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .action-btn:hover {
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page">
+  <div class="engine-container">
+
+    <!-- HEADER -->
+    <div class="engine-header">
+      <div class="icon"></div>
+      <h1>Old vs New Tax Regime Comparison Engine</h1>
+      <p class="subtitle">
+        Provision-based comparison using government-notified slabs,
+        rebates, surcharge, cess, and marginal relief rules.
+      </p>
+    </div>
+
+    <!-- OLD REGIME -->
+    <section class="detail-card">
+      <h2>Old Tax Regime</h2>
+
+      <h3>Income Tax Slabs</h3>
+      <ul>
+        <li>₹0 – ₹2,50,000 → Nil</li>
+        <li>₹2,50,001 – ₹5,00,000 → 5%</li>
+        <li>₹5,00,001 – ₹10,00,000 → 20%</li>
+        <li>Above ₹10,00,000 → 30%</li>
+      </ul>
+
+      <h3>Basic Exemption Limit</h3>
+      <ul>
+        <li>Senior Citizen (60–80): ₹3,00,000</li>
+        <li>Super Senior Citizen (80+): ₹5,00,000</li>
+      </ul>
+
+      <h3>Rebate – Section 87A</h3>
+      <ul>
+        <li>Total income ≤ ₹5,00,000</li>
+        <li>Rebate up to ₹12,500</li>
+        <li>Effective tax becomes NIL</li>
+      </ul>
+
+      <h3>Surcharge</h3>
+      <ul>
+        <li>₹50L–₹1Cr → 10%</li>
+        <li>₹1Cr–₹2Cr → 15%</li>
+        <li>₹2Cr–₹5Cr → 25%</li>
+        <li>Above ₹5Cr → 37%</li>
+      </ul>
+
+      <h3>Cess</h3>
+      <ul>
+        <li>4% Health & Education Cess</li>
+      </ul>
+    </section>
+
+    <!-- NEW REGIME -->
+<section class="detail-card">
+  <h2>New Tax Regime </h2>
+
+  <h3>Income Tax Slabs (Before Cess)</h3>
+  <ul>
+    <li>Up to ₹4,00,000 → 0% (No tax)</li>
+    <li>₹4,00,001 – ₹8,00,000 → 5%</li>
+    <li>₹8,00,001 – ₹12,00,000 → 10%</li>
+    <li>₹12,00,001 – ₹16,00,000 → 15%</li>
+    <li>₹16,00,001 – ₹20,00,000 → 20%</li>
+    <li>₹20,00,001 – ₹24,00,000 → 25%</li>
+    <li>Above ₹24,00,000 → 30%</li>
+  </ul>
+
+  <h3>Rebate – Section 87A (New Regime)</h3>
+  <ul>
+    <li>Applicable if total income ≤ ₹7,00,000</li>
+    <li>Rebate up to ₹25,000</li>
+    <li>Effective tax becomes NIL</li>
+  </ul>
+
+  <h3>Standard Deduction</h3>
+  <ul>
+    <li>₹50,000 allowed for salaried & pensioners</li>
+  </ul>
+
+  <h3>Surcharge</h3>
+  <ul>
+    <li>₹50L–₹1Cr → 10%</li>
+    <li>₹1Cr–₹2Cr → 15%</li>
+    <li>₹2Cr–₹5Cr → 25%</li>
+    <li>Above ₹5Cr → Maximum 25%</li>
+  </ul>
+
+  <h3>Cess</h3>
+  <ul>
+    <li>4% Health & Education Cess on computed tax</li>
+  </ul>
+</section>
+
+
+    <!-- MARGINAL RELIEF -->
+    <section class="detail-card note">
+      <h2>Marginal Relief (Both Regimes)</h2>
+      <p>
+        Marginal relief ensures that additional tax payable due to surcharge
+        does not exceed the actual income increase beyond the surcharge limit.
+      </p>
+      <p>
+        <strong>Example:</strong><br>
+        Income = ₹50,10,000<br>
+        Extra income = ₹10,000<br>
+        Tax increase without relief = ₹1,20,000<br>
+        <strong>Tax payable restricted to ₹10,000</strong>
+      </p>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <section class="detail-card note">
+      <h2>Regulatory Disclaimer</h2>
+      <p>
+        This comparison is for informational purposes only.
+        Shunyatax does not file returns or act as a tax authority.
+        Final regime selection and filing responsibility remains with the user.
+      </p>
+    </section>
+
+    <!-- BACK -->
+    <div class="back-wrap">
+      <button class="action-btn" onclick="window.location.href='access.html'">
+        ← Back to Platform
+      </button>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

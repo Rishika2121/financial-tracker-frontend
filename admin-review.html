@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Review & Validation – Shunyatax</title>
+  <link rel="stylesheet" href="access.css">
+
+  <style>
+    body {
+      background: #0b0f19;
+      color: #eaeaf0;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    .engine-container {
+      max-width: 1400px;
+      margin: auto;
+      padding: 50px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .engine-header {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .engine-header .icon {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .engine-header h1 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .engine-header .subtitle {
+      max-width: 850px;
+      margin: auto;
+      opacity: 0.85;
+      line-height: 1.6;
+    }
+
+    .detail-card {
+      background: linear-gradient(180deg, #141a2e, #0f1426);
+      border: 1px solid #1f2a44;
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .detail-card h2 {
+      color: #d4af37;
+      margin-bottom: 12px;
+    }
+
+    .detail-card p,
+    .detail-card li {
+      font-size: 14px;
+      opacity: 0.92;
+      line-height: 1.6;
+    }
+
+    .detail-card ul {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    .detail-card ul li {
+      margin-bottom: 6px;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .result-box {
+      padding: 22px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .approved {
+      border-left: 5px solid #3cb371;
+    }
+
+    .flagged {
+      border-left: 5px solid #f0ad4e;
+    }
+
+    .note {
+      grid-column: 1 / -1;
+      background: #11172b;
+      border-left: 4px solid #d4af37;
+    }
+
+    .back-wrap {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-top: 35px;
+    }
+
+    .action-btn {
+      background: #d4af37;
+      color: #000;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <div class="engine-container">
+
+    <!-- HEADER -->
+    <div class="engine-header">
+      <div class="icon"></div>
+      <h1>Admin Review & Validation Engine</h1>
+      <p class="subtitle">
+        A controlled compliance layer that validates tax data,
+        deductions, and special provisions before final preparation.
+      </p>
+    </div>
+
+    <!-- WHY REQUIRED -->
+    <section class="detail-card">
+      <h2>Why Admin Review Exists</h2>
+      <p>
+        Shunyatax intentionally prevents direct tax finalization
+        to reduce filing errors, audit risk, and incorrect claims.
+      </p>
+      <ul>
+        <li>Prevents unsupported or excessive deductions</li>
+        <li>Ensures correct section application</li>
+        <li>Identifies missing documents or inconsistencies</li>
+        <li>Adds professional compliance oversight</li>
+      </ul>
+    </section>
+
+    <!-- WHAT IS REVIEWED -->
+    <section class="detail-card">
+      <h2>What Gets Reviewed</h2>
+      <ul>
+        <li>User identity & profile classification</li>
+        <li>Uploaded documents & proofs</li>
+        <li>Expense categorization accuracy</li>
+        <li>Eligibility engine results</li>
+        <li>Special cases (44AD, business income)</li>
+      </ul>
+    </section>
+
+    <!-- OUTCOMES -->
+    <section class="detail-card" style="grid-column:1 / -1;">
+      <h2>Review Outcomes</h2>
+
+      <div class="result-grid">
+        <div class="result-box approved">
+          <h3>Validated & Approved</h3>
+          <p>
+            Data is complete, compliant, and approved
+            for tax computation and filing readiness.
+          </p>
+        </div>
+
+        <div class="result-box flagged">
+          <h3>Flagged for Correction</h3>
+          <p>
+            Issues are identified and shared with the user
+            for correction, clarification, or re-upload.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="detail-card" style="grid-column:1 / -1;">
+      <h2>Purpose & Benefits</h2>
+      <ul>
+        <li>Additional compliance safety net</li>
+        <li>Lower audit and penalty exposure</li>
+        <li>Improved data quality</li>
+        <li>Higher confidence before filing</li>
+      </ul>
+    </section>
+
+    <!-- DISCLAIMER -->
+    <section class="detail-card note">
+      <h2>Regulatory Disclaimer</h2>
+      <p>
+        Admin review assists in compliance validation only.
+        Shunyatax does not file returns or replace
+        a licensed tax professional.
+        Final filing responsibility remains with the user.
+      </p>
+    </section>
+
+    <!-- BACK -->
+    <div class="back-wrap">
+      <button class="action-btn" onclick="window.location.href='access.html'">
+        ← Back to Platform
+      </button>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

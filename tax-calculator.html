@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Income Tax Calculator – Shunyatax</title>
+  <link rel="stylesheet" href="income-tax.css">
+</head>
+
+<body>
+
+  <div class="tax-container">
+    <!-- HEADER -->
+    <div class="tax-header">
+
+      <h1>Income Tax Calculator</h1>
+
+      <div class="regime-toggle">
+        <span>Calculate Using</span>
+
+          <button id="oldBtn" class="active" type="button" onclick="setRegime('old')">
+            Old Regime
+          </button>
+
+          <button id="newBtn" type="button" onclick="setRegime('new')">
+            New Regime
+          </button>
+
+        </div>
+
+        <!-- Hidden field -->
+        <input type="hidden" id="regime" value="old">
+      </div>
+    </div>
+
+
+    <div class="tax-layout">
+
+      <!-- LEFT PANEL -->
+      <div class="left-panel">
+
+        <div class="section-header">
+          <span class="step">1</span>
+          Basic details
+        </div>
+
+        <!-- SCROLL WRAPPER ADDED -->
+        <div class="basic-scroll">
+
+          <label>Age</label>
+          <select id="selfAge">
+            <option>Below 60 Years</option>
+            <option>60 to 80 Years</option>
+            <option>Above 80 Years</option>
+          </select>
+
+<label>Select Income Type</label>
+
+<select id="incomeType" onchange="handleIncomeType()">
+<option value="NORMAL">Individual / Salary</option>
+<option value="BUSINESS">Business (Books)</option>
+<option value="44AD">Presumptive Business (44AD)</option>
+<option value="44ADA">Professional (44ADA)</option>
+<option value="44AE">Transport (44AE)</option>
+</select>
+
+<div id="salaryFieldsWrapper">
+  <label>Annual Income From Salary</label>
+  <input type="number"   id="income" placeholder="Enter amount">
+
+  <label>Income From Interest(on Savings Accounts, Deposits etc.)</label>
+  <input type="number"  id="interestIncome" placeholder="Enter amount">
+
+  <label>Yearly Rental Income Received</label>
+  <input type="number"  id="rentalIncome" placeholder="Enter amount">
+
+  <label>Income From Other Sources(Divident, Gifts, Exempt etc.)</label>
+  <input type="number"   id="otherIncome" placeholder="Enter amount">
+</div>
+
+<div id="businessFieldsWrapper" style="display:none;">
+  <div id="turnoverWrapper">
+    <label>Turnover / Gross Receipts</label>
+    <input type="number" id="turnover" placeholder="Enter turnover">
+  </div>
+
+  <div id="adWrapper" style="display:none;">
+    <label>Digital Turnover</label>
+    <input type="number" id="digitalTurnover">
+    <label>Cash Turnover</label>
+    <input type="number" id="cashTurnover">
+  </div>
+
+  <div id="aeWrapper" style="display:none;">
+    <label>Number of Goods Vehicles</label>
+    <input type="number" id="vehicles">
+  </div>
+
+  <div id="booksExpensesWrapper">
+    <h3>Business Expenses</h3>
+    <input type="number" id="rent" placeholder="Rent">
+    <input type="number" id="salary" placeholder="Salary">
+    <input type="number" id="electricity" placeholder="Electricity">
+    <input type="number" id="internet" placeholder="Internet">
+    <input type="number" id="advertisement" placeholder="Advertisement">
+    <input type="number" id="repair" placeholder="Repair">
+    <input type="number" id="professionalFees" placeholder="Professional Fees">
+    <input type="number" id="loanInterest" placeholder="Loan Interest">
+    <input type="number" id="depreciation" placeholder="Depreciation">
+    <input type="number" id="otherExpenses" placeholder="Other Expenses">
+  </div>
+</div>
+        </div>
+        <!-- END SCROLL WRAPPER -->
+
+
+        <!-- DEDUCTIONS -->
+<div class="section">
+
+  <div class="section-header">
+    <span class="step">2</span>
+    Deductions
+  </div>
+
+
+  <!-- OLD REGIME WRAPPER START -->
+  <div id="oldDeductions">
+
+    <div class="tabs">
+
+      <button class="tab active" onclick="showTab('tab80c')">80C</button>
+      <button class="tab" onclick="showTab('tab80d')">80D</button>
+      <button class="tab" onclick="showTab('tab80g')">80G</button>
+      <button class="tab" onclick="showTab('tab80e')">80E</button>
+      <button class="tab" onclick="showTab('tab80dd')">80DD</button>
+      <button class="tab" onclick="showTab('tab80tta')">80TTA</button>
+      <button class="tab" onclick="showTab('tab80ttb')">80TTB</button>
+      <button class="tab" onclick="showTab('tab80ccd')">80CCD</button>
+      <button class="tab" onclick="showTab('tab80ccd1b')">80CCD(1B)</button>
+      <button class="tab" onclick="showTab('tab80u')">80U</button>
+      <button class="tab" onclick="showTab('tab80ccc')">80CCC</button>
+<button class="tab" onclick="showTab('tab80ee')">80EE</button>
+<button class="tab" onclick="showTab('tab80eea')">80EEA</button>
+<button class="tab" onclick="showTab('tab80gg')">80GG</button>
+<button class="tab" onclick="showTab('tab80ddb')">80DDB</button>
+
+    </div>
+
+
+    <!-- 80C -->
+    <div id="tab80c" class="tab-content active">
+
+      <label>Annual Life Insurance Premium</label>
+      <input type="number"  id="lic">
+
+      <label>Investment in Public Provident Fund</label>
+      <input type="number"  id="ppf">
+
+      <label>Contribution to Employee Provident Fund</label>
+      <input type="number"  id="elss">
+
+      <label>Tax Saving Fixed Deposit</label>
+      <input type="number"  id="homeLoanPrincipal">
+
+      <label>Repayment of Principal on Housing Loan</label>
+
+
+      <label>ULIP/Tax Saving Investment Plans</label>
+      <input type="number" >
+
+      <label>Equity Linked Savings Schemes (ELSS)</label>
+      <input type="number" >
+
+      <label>Employee Contribution to NPS u/s 80CCD(1)</label>
+      <input type="number" >
+
+      <label>Yearly Tution Fee for kids</label>
+      <input type="number" >
+
+      <label>Other Tax Saving Investments u/s 80C</label>
+      <input type="number" >
+
+    </div>
+
+
+    <!-- 80D -->
+    <div id="tab80d" class="tab-content">
+
+      <label>Health Insurance Premium For Self & Family</label>
+      <input type="number"  id="selfInsurance">
+
+      <label>Health Insurance Premium For Parents below 60 Years</label>
+      <input type="number"  id="donation100">
+
+      <label>Health Insurance Premium For Parents above 60 Years</label>
+      <input type="number"  id="donation50">
+
+    </div>
+
+
+    <!-- 80G -->
+    <div id="tab80g" class="tab-content">
+
+      <label>Donation (100% deduction without any restriction)</label>
+      <input type="number"  id="donation100">
+
+      <label>Donation (50% deduction without any restriction)</label>
+      <input type="number"  id="donation50">
+
+      <label>Donation Amount</label>
+      <input type="number"  id="donation">
+
+      <label>Donation Type</label>
+      <select id="donationType">
+        <option value="none">Not Eligible</option>
+        <option value="100">
+          Donation (100% deduction with restriction to 10% of Adjusted Gross Total income)
+        </option>
+        <option value="50">
+          Donation (50% deduction with restriction to 10% of Adjusted Gross Total income)
+        </option>
+      </select>
+
+    </div>
+
+
+    <!-- 80E -->
+    <div id="tab80e" class="tab-content">
+
+      <label>Education Loan Interest</label>
+      <input type="number"   id="educationLoanInterest">
+
+    </div>
+
+
+    <!-- 80DD -->
+    <div id="tab80dd" class="tab-content">
+
+      <label>Dependent Disability</label>
+      <select id="dependentDisability">
+        <option value="none">None</option>
+        <option value="normal">Normal</option>
+        <option value="severe">Severe</option>
+      </select>
+
+    </div>
+
+
+    <!-- 80TTA -->
+    <div id="tab80tta" class="tab-content">
+
+      <label>Savings Interest</label>
+      <input type="number"  id="savingsInterest">
+
+    </div>
+
+
+    <!-- 80TTB -->
+    <div id="tab80ttb" class="tab-content">
+
+      <label>Senior Interest</label>
+      <input type="number"  id="seniorInterest">
+
+    </div>
+
+
+    <!-- 80U -->
+    <div id="tab80u" class="tab-content">
+
+      <label>Disability</label>
+      <select id="disabilityType">
+        <option value="none">None</option>
+        <option value="normal">Normal</option>
+        <option value="severe">Severe</option>
+      </select>
+
+    </div>
+
+
+    <!-- 80CCD -->
+    <div id="tab80ccd" class="tab-content">
+
+      <label>NPS Contribution (Section 80CCD)</label>
+      <input type="number"   id="nps">
+
+    </div>
+
+    <!-- 80CCD(1B) -->
+    <div id="tab80ccd1b" class="tab-content">
+
+      <label>Extra NPS Benefit (Section 80CCD(1B))</label>
+      <input type="number"   id="nps1b">
+
+    </div>
+    <!-- 80CCC -->
+<div id="tab80ccc" class="tab-content">
+
+  <label>Contribution to Pension Fund (80CCC)</label>
+  <input type="number" id="pensionFund">
+
+</div>
+
+
+<!-- 80EE -->
+<div id="tab80ee" class="tab-content">
+
+  <label>Interest on Home Loan (80EE)</label>
+  <input type="number" id="homeLoanInterest80EE">
+
+</div>
+
+
+<!-- 80EEA -->
+<div id="tab80eea" class="tab-content">
+
+  <label>Affordable Housing Interest (80EEA)</label>
+  <input type="number" id="homeLoanInterest80EEA">
+
+</div>
+
+
+<!-- 80GG -->
+<div id="tab80gg" class="tab-content">
+
+  <label>House Rent Paid (80GG)</label>
+  <input type="number" id="rentPaid">
+
+</div>
+
+
+<!-- 80DDB -->
+<div id="tab80ddb" class="tab-content">
+
+  <label>Medical Treatment for Specified Diseases (80DDB)</label>
+  <input type="number" id="medicalTreatment">
+
+</div>
+
+  </div>
+  
+  <!-- OLD REGIME WRAPPER END -->
+
+
+ <!-- NEW REGIME WRAPPER START -->
+<div id="newDeductions" style="display:none">
+
+  <div class="tabs">
+
+    <button class="tab active" onclick="showTab('tabNew1')">NPS</button>
+    <button class="tab" onclick="showTab('tabNew2')">Gratuity</button>
+    <button class="tab" onclick="showTab('tabNew3')">Leave</button>
+    <button class="tab" onclick="showTab('tabNew4')">Pension</button>
+    <button class="tab" onclick="showTab('tabNew5')">Agniveer</button>
+    <button class="tab" onclick="showTab('tabNew6')">Employee</button>
+    <button class="tab" onclick="showTab('tabNew7')">Property</button>
+
+  </div>
+
+
+  <!-- Standard Deduction -->
+  <div class="tab-content">
+    <label>Standard Deduction</label>
+    <input type="number" value="75000">
+  </div>
+
+
+  <!-- NPS -->
+  <div id="tabNew1" class="tab-content active">
+
+    <label>Employer NPS</label>
+    <input type="number"   id="employerNpsContribution">
+
+  </div>
+
+
+  <!-- Gratuity -->
+  <div id="tabNew2" class="tab-content">
+
+    <label>Gratuity</label>
+    <input type="number"  id="gratuityAmount">
+
+  </div>
+
+
+  <!-- Leave -->
+  <div id="tabNew3" class="tab-content">
+
+    <label>Leave Encashment</label>
+    <input type="number"  id="leaveEncashment">
+
+  </div>
+
+
+  <!-- Pension -->
+  <div id="tabNew4" class="tab-content">
+
+    <label>Family Pension</label>
+    <input type="number"  id="familyPension">
+
+  </div>
+
+
+  <!-- Agniveer -->
+  <div id="tabNew5" class="tab-content">
+
+    <label>Agniveer Contribution</label>
+    <input type="number"   id="agniveerContribution">
+
+  </div>
+
+
+  <!-- Employee -->
+  <div id="tabNew6" class="tab-content">
+
+    <label>Additional Employee Cost</label>
+    <input type="number"   id="additionalEmployeeCost">
+
+  </div>
+
+
+  <!-- Property -->
+  <div id="tabNew7" class="tab-content">
+
+    <label>Let Out Property Interest</label>
+    <input type="number"   id="letOutPropertyInterest">
+
+  </div>
+
+</div>
+<!-- NEW REGIME WRAPPER END -->
+
+
+
+
+        <!-- TAX PAID -->
+        <div class="section">
+
+          <div class="section-header tax-header-toggle">
+
+            <span class="step">3</span>
+
+            <span>Tax Paid</span>
+
+            <button type="button" class="toggle-btn" onclick="toggleTaxPaid()" id="taxToggleBtn">
+              +
+            </button>
+
+          </div>
+
+          <!-- THIS PART WILL TOGGLE -->
+          <div id="taxPaidContent" class="tax-content">
+
+            <label>TDS Paid</label>
+            <input type="number"   id="tdsPaid">
+
+            <label>Advance Tax</label>
+            <input type="number"  id="advanceTax">
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+      <!-- RIGHT PANEL -->
+      <div class="right-panel">
+
+        <h2>Overall Summary</h2>
+
+
+        <div class="circle">
+
+          <div class="circle-inner">
+
+            <span>Monthly Tax</span>
+            <h3 id="monthlyTax">₹0</h3>
+
+          </div>
+
+        </div>
+
+
+<label>Income Type</label>
+
+<select id="incomeTypeSummary">
+<option value="NORMAL">Individual / Salary</option>
+<option value="BUSINESS">Business (Books of accounts)</option>
+<option value="44AD">Presumptive Business (44AD)</option>
+<option value="44ADA">Professional (44ADA)</option>
+<option value="44AE">Transport (44AE)</option>
+</select>
+        <select id="isDigital" style="display:none;">
+          <option value="true" selected>true</option>
+        </select>
+
+       <div class="summary-grid">
+
+<div>
+<span>Gross Income</span>
+<h3 id="grossIncome">₹0</h3>
+</div>
+
+<div style="cursor: pointer;" onclick="document.getElementById('deductionsBreakdownContainer').style.display = document.getElementById('deductionsBreakdownContainer').style.display === 'none' ? 'block' : 'none'">
+<span>Total Deductions ▾</span>
+<h3 id="totalDeductions">₹0</h3>
+<div id="deductionsBreakdownContainer" style="display:none; margin-top:5px; font-size: 0.85em; border-top: 1px solid #2a344a; padding-top: 5px;">
+    <div id="stdDeductionBreakdown" style="display:none; justify-content:space-between; margin:5px 0; color: #a1a1aa;"><span>Standard Deduction</span> <strong id="stdDeductionVal">₹0</strong></div>
+    <div id="deductionsBreakdown"></div>
+</div>
+</div>
+
+<div>
+<span>Taxable Income</span>
+<h3 id="taxableIncome">₹0</h3>
+</div>
+
+<div>
+<span>Tax Before Cess</span>
+<h3 id="taxBeforeCess">₹0</h3>
+</div>
+
+<div>
+<span>Surcharge</span>
+<h3 id="surcharge">₹0</h3>
+</div>
+
+<div>
+<span>Cess</span>
+<h3 id="cess">₹0</h3>
+</div>
+
+<div>
+<span>Net Tax Payable</span>
+<h3 id="netTax">₹0</h3>
+</div>
+
+<div>
+<span>Tax Ratio</span>
+<h3 id="taxRatio">0%</h3>
+</div>
+
+<div>
+<span>Taxes Paid</span>
+<h3 id="taxPaid">₹0</h3>
+</div>
+
+<div id="slabBreakdownContainer" class="section" style="margin-top:20px; display:none;">
+    <h4>Tax Slab Breakdown</h4>
+    <div id="slabBreakdown"></div>
+</div>
+
+</div>
+
+
+
+        <div class="action-buttons">
+
+          <button class="download-btn" onclick="downloadReport()">Download Report</button>
+
+          <button class="explore-btn" onclick="window.location.href='deductions.html'">
+            Explore Tax Saving Plans
+          </button>
+
+          <button onclick="calculateTax()">Calculate Tax</button>
+        </div>
+        <div id="result"></div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <script src="tax.js"></script>
+  <!-- <script src="tax-tip.js"></script> -->
+<script>
+
+</script>
+
+
+</body>
+
+</html>
