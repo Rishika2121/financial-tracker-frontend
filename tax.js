@@ -184,7 +184,7 @@ const payload = {
   }
 };
   try {
-    const response = await fetch("/api/tax/calculate", {
+    fetch("https://financial-tracker-backend-jg95.onrender.com/api/tax/calculate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
