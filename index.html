@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Shunyatax – Tax Deduction Intelligence</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -16,10 +17,14 @@
 <!-- ================= NAVBAR ================= -->
 <nav class="navbar">
 
-  <div class="nav-left">
-    <img src="logo-img.jpg" class="logo-img">
-    <span class="logo-text">Shunyatax Financial Tools</span>
-  </div>
+<div class="menu-toggle" id="menu-toggle">
+<i class="fa fa-bars"></i>
+</div>
+
+<div class="nav-left">
+<img src="logo-img.jpg" class="logo-img">
+<span class="logo-text">Shunyatax Financial Tools</span>
+</div>
 
   <div class="nav-center">
 
@@ -326,6 +331,16 @@ document.querySelectorAll(".fade-up, .fade-in").forEach(el => {
 
 </script>
 
+<script>
+
+const toggle = document.getElementById("menu-toggle");
+const menu = document.querySelector(".nav-center");
+
+toggle.addEventListener("click", () => {
+menu.classList.toggle("active");
+});
+
+</script>
 
 <script src="tax.js"></script>
 <script src="tax-tip.js"></script>
