@@ -121,16 +121,13 @@ const payload = {
   incomeFromInterest: getValue("interestIncome"),
   incomeFromHouseProperty: getValue("rentalIncome"),
   incomeFromOtherSources: getValue("otherIncome"),
- turnover:
-  type === "44AD"
-    ? getValue("digitalTurnover") + getValue("cashTurnover")
-    : getValue("turnover"),
+  turnover: getValue("turnover"),
   businessExpenses: getValue("businessExpenses"),
   digitalTurnover: getValue("digitalTurnover"),
   cashTurnover: getValue("cashTurnover"),
   vehicles: getValue("vehicles"),
   regime,
- incomeType: type,
+  incomeType: document.getElementById("incomeType")?.value || "NORMAL",
   rent: getValue("rent"),
   salary: getValue("salary"),
   electricity: getValue("electricity"),
@@ -186,33 +183,6 @@ const payload = {
     advance: getValue("advanceTax")
   }
 };
-const type = document.getElementById("incomeType")?.value;
-
-if (type === "44AE") {
-  const vehicles = getValue("vehicles");
-
-  if (vehicles > 100) {
-    alert("Vehicle number looks incorrect.");
-    return;
-  }
-}
-if (type === "44AD") {
-  const turnover = getValue("digitalTurnover") + getValue("cashTurnover");
-
-  if (turnover > 30000000) {
-    alert("44AD allowed only up to ₹3 Crore turnover");
-    return;
-  }
-}
-
-if (type === "44ADA") {
-  const turnover = getValue("turnover");
-
-  if (turnover > 7500000) {
-    alert("44ADA allowed only up to ₹75 Lakh receipts");
-    return;
-  }
-}
   try {
    const response = await fetch("https://financial-tracker-backend-jg95.onrender.com/api/tax/calculate", {
       method: "POST",
