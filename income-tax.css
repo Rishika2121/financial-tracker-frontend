@@ -177,11 +177,9 @@ input:focus, select:focus{
 ================================ */
 .tab-content{
     display:none;
-    max-height:200px;
-
-    overflow-y:auto;   /* vertical scroll allowed */
-    overflow-x:hidden; /* horizontal scroll remove */
-
+    max-height:400px;
+    overflow-y:auto;
+    overflow-x:hidden;
     padding-right:8px;
 }
 
@@ -306,43 +304,31 @@ input:focus, select:focus{
    RESPONSIVE
 ================================ */
 @media(max-width:1200px){
-
-.tax-container{
-    width:95%;
+  .tax-container{
+      width:95%;
+  }
 }
 
-.tax-layout{
-display:flex;
-gap:25px;
-align-items:stretch;
+@media(max-width: 900px){
+  .tax-layout{
+    flex-direction: column;
+  }
+  .left-panel, .right-panel {
+    width: 100%;
+    height: auto;
+  }
 }
 
-.left-panel{
-height:650px;
-overflow:hidden;
-}
-   
-
-.right-panel{
-height:650px;
-}
-
-}
 
 
 
 
 
 .basic-scroll{
-
-    max-height:200px;
-
+    max-height:400px;
     overflow-y:auto;
-
     overflow-x:hidden;
-
     padding-right:8px;
-
 }
 
 .basic-scroll::-webkit-scrollbar{
@@ -551,4 +537,64 @@ height:650px;
 .action-buttons button:last-child:hover {
   background: white;
   transform: scale(1.05);
+}
+/* ROBOT BUTTON */
+#chatToggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+/* ROBOT IMAGE */
+#chatToggle img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: jump 1s infinite;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* JUMP ANIMATION */
+@keyframes jump {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* HOVER EFFECT */
+#chatToggle img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #22c55e;
+}
+#aiChatbox {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  background: #0f172a;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 9999;
+
+  transform: scale(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+/* SHOW CHAT */
+#aiChatbox.active {
+  transform: scale(1);
+}
+#chatToggle img {
+  animation: jump 1s infinite, blink 3s infinite;
+}
+
+@keyframes blink {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0.6; }
 }

@@ -397,3 +397,8 @@ function downloadReport() {
 
   link.click();
 }
+
+function toggleChat() {
+  const chat = document.getElementById("aiChatbox");
+  chat.classList.toggle("active");
+}

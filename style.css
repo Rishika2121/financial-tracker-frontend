@@ -243,12 +243,6 @@ h2:hover span {
   font-weight: 700;
 }
 
-.section-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
-}
 
 /* Floating Button */
 .tax-tip-btn {
@@ -431,6 +425,10 @@ a {
 
 .hero-buttons {
   margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 /* ================= SECTION ================= */
@@ -544,6 +542,18 @@ a {
 
   .hero h1 {
     font-size: 28px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-buttons a {
+    width: 100%;
+    max-width: 300px;
+    display: inline-flex;
+    justify-content: center;
   }
 
   .section {
@@ -669,6 +679,18 @@ a {
   gap: 30px;
 }
 
+@media (max-width: 900px) {
+  .deductions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .deductions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .center-card {
   margin-top: 50px;
   display: flex;
@@ -676,7 +698,8 @@ a {
 }
 
 .center-card .info-card {
-  width: 380px;
+  width: 100%;
+  max-width: 380px;
 }
 
 
@@ -739,6 +762,12 @@ a {
   margin-top: 40px;
 }
 
+@media (max-width: 768px) {
+  .terms-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 .terms-container .info-card h3 {
   color: #d4af37;
   margin-bottom: 10px;
@@ -758,6 +787,7 @@ a {
 .contact-container {
   max-width: 600px;
   margin: 40px auto;
+  width: 100%;
 }
 
 .contact-form {
@@ -765,6 +795,12 @@ a {
   padding: 40px;
   border-radius: 16px;
   border: 1px solid #1f2a44;
+}
+
+@media (max-width: 600px) {
+  .contact-form {
+    padding: 25px 20px;
+  }
 }
 
 .form-group {
@@ -1399,7 +1435,7 @@ html, body {
 
   max-width: 260px;
 
-  margin-bottom: 12px;
+  margin: 0 auto 12px auto;
 
 }
 
@@ -1521,6 +1557,18 @@ html, body {
 .nav-center{
   display:flex;
   gap:25px;
+}
+
+@media (min-width: 769px) {
+  .navbar {
+    justify-content: center;
+    gap: 32px;
+  }
+  .nav-center {
+    width: max-content;
+    white-space: nowrap;
+    gap: 32px;
+  }
 }
 
 .nav-link{

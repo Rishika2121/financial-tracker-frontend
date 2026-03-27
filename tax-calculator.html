@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Income Tax Calculator – Shunyatax</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Tax Calculator - Shunyatax</title>
   <link rel="stylesheet" href="income-tax.css">
 </head>
 
@@ -582,7 +583,26 @@
 
 </script>
 
+<!-- FLOAT BUTTON -->
+<div id="chatToggle" onclick="toggleChat()">
+  <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="robot" />
+</div>
 
+<!-- CHAT BOX -->
+<div id="aiChatbox" class="hidden">
+
+  <div class="chat-header">
+    AI Assistant
+    <span onclick="toggleChat()">✖</span>
+  </div>
+
+  <div id="chatMessages" class="chat-body"></div>
+
+  <input type="text" id="chatInput" placeholder="Ask tax question..." />
+
+  <button onclick="sendChat()">Send</button>
+
+</div>
 </body>
 
 </html>
