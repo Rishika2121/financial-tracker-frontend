@@ -184,7 +184,7 @@ const payload = {
   }
 };
   try {
-   const response = await fetch("https://financial-tracker-backend-jg95.onrender.com/api/tax/calculate", {
+   const response = await fetch("https://financial-tracker-backend-1.onrender.com/api/tax/calculate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -401,4 +401,34 @@ function downloadReport() {
 function toggleChat() {
   const chat = document.getElementById("aiChatbox");
   chat.classList.toggle("active");
+}
+async function sendMessage() {
+  const input = document.getElementById("chatInput").value;
+
+  if (!input) return;
+
+  const chatBody = document.getElementById("chatBody");
+
+  // Show user message
+  chatBody.innerHTML += `<div style="margin:5px 0;">You: ${input}</div>`;
+
+  try {
+    const response = await fetch("https://financial-tracker-backend-1.onrender.com/api/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ message: input })
+    });
+
+    const data = await response.json();
+
+    // Show bot reply
+    chatBody.innerHTML += `<div style="margin:5px 0; color:lightgreen;">Bot: ${data.reply}</div>`;
+
+  } catch (error) {
+    chatBody.innerHTML += `<div style="color:red;">Error connecting to server</div>`;
+  }
+
+  document.getElementById("chatInput").value = "";
 }
