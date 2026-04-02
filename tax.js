@@ -413,21 +413,20 @@ async function sendMessage() {
   chatBody.innerHTML += `<div style="margin:5px 0;">You: ${input}</div>`;
 
   try {
-  const API_URL = window.location.hostname === "localhost"
-    ? "http://localhost:5000"
-    : "https://financial-tracker-backend-1.onrender.com";
+    const API_URL = window.location.hostname === "localhost"
+      ? "http://localhost:5000"
+      : "https://financial-tracker-backend-1.onrender.com";
 
-  const response = await fetch(`${API_URL}/api/chat`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ message: input })
-  });
+    const response = await fetch(`${API_URL}/api/chat`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ message: input })
+    });
 
-  const data = await response.json();
+    const data = await response.json();
 
-    // Show bot reply
     chatBody.innerHTML += `<div style="margin:5px 0; color:lightgreen;">Bot: ${data.reply}</div>`;
 
   } catch (error) {
